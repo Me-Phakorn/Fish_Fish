@@ -1,0 +1,52 @@
+{
+    "fishDatabase": [
+        {
+            "id": "001",
+            "fishName": "Tuna",
+            "description": "",
+            "fishImage": "Fish Images/Fish",
+            "fishType": 0,
+            "fishPrice": 100,
+            "maxHealth": 100,
+            "maxHunger": 100,
+            "maxStamina": 100,
+            "attack": 10,
+            "defense": 10,
+            "speed": 10,
+            "fishClass": 0,
+            "fishSize": 0
+        },
+        {
+            "id": "002",
+            "fishName": "Swordfish",
+            "fishImage": "Fish Images/Fish",
+            "description": "",
+            "fishType": 0,
+            "fishPrice": 100,
+            "maxHealth": 200,
+            "maxHunger": 100,
+            "maxStamina": 100,
+            "attack": 10,
+            "defense": 10,
+            "speed": 10,
+            "fishClass": 0,
+            "fishSize": 1
+        },
+        {
+            "id": "003",
+            "fishName": "Salmon",
+            "fishImage": "Fish Images/Fish",
+            "description": "",
+            "fishType": 0,
+            "fishPrice": 100,
+            "maxHealth": 300,
+            "maxHunger": 100,
+            "maxStamina": 100,
+            "attack": 10,
+            "defense": 10,
+            "speed": 10,
+            "fishClass": 0,
+            "fishSize": 2
+        }
+    ]
+}

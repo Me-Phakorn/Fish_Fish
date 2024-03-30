@@ -1,0 +1,33 @@
+{
+    "userID": "123456",
+    "userName": "张三",
+    "fishTask": [
+        {
+            "id": "001",
+            "fishName": "Tuna",
+            "stats":{
+                "health": 89,
+                "hunger": 10,
+                "stamina": 9
+            }
+        },
+        {
+            "id": "001",
+            "fishName": "Tuna",
+            "stats":{
+                "health": 22,
+                "hunger": 33,
+                "stamina": 9
+            }
+        },
+        {
+            "id": "003",
+            "fishName": "Salmon",
+            "stats":{
+                "health": 44,
+                "hunger": 11,
+                "stamina": 9
+            }
+        }
+    ]
+}
