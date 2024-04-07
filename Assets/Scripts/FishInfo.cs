@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Fish
+public class FishInfo
 {
     [Header("Fish Info")]
     public string fishName;

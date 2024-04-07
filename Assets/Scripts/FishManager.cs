@@ -24,7 +24,7 @@ public class FishManager : MonoBehaviour
             string imagePath = fish["fishImage"].ToString();
             Sprite image = Resources.Load<Sprite>(imagePath);
 
-            Fish newFish = new Fish(){
+            FishInfo newFish = new FishInfo(){
                 fishName = fish["fishName"].ToString(),
                 fishSprite = image,
                 description = fish["description"].ToString(),

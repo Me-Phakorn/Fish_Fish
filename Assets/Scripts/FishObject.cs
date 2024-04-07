@@ -6,7 +6,7 @@ using UnityEngine;
 public class FishObject : MonoBehaviour
 {
     [SerializeField]
-    private Fish fish; // ใส่ค่ามาแล้ว
+    private FishInfo fish; // ใส่ค่ามาแล้ว
 
     [Header("Fish Stats")]
     public float health;
@@ -16,7 +16,7 @@ public class FishObject : MonoBehaviour
     [Header("Fish Image")]
     public SpriteRenderer spriteRenderer;
 
-    public void SetFish(Fish _fish)
+    public void SetFish(FishInfo _fish)
     {
         fish = _fish;
 

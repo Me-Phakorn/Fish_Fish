@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Fish Database", menuName = "Fish/Fish Database")]
 public class FishDatabase : ScriptableObject
 {
-    public List<Fish> fishList = new List<Fish>();
+    public List<FishInfo> fishList = new List<FishInfo>();
 }
