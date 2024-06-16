@@ -7,7 +7,7 @@
             "fishName": "Tuna",
             "stats":{
                 "health": 89,
-                "hunger": 10,
+                "hunger": 0,
                 "stamina": 9
             }
         },

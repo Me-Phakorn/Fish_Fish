@@ -1,42 +1,42 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BestHTTP;
 using BestHTTP.JSON.LitJson;
 using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    public FishDatabase fishDatabase;
+    public Transform spawnFishPoint;
+    public Transform fishTank;
 
-    public TextAsset fishDatabaseJson; // from API
-    public TextAsset userDataJson; // from API
+    public GameObject fishPrefab;
 
-    private void Start()
+    private async void Start()
     {
-        JsonReader reader = new JsonReader(fishDatabaseJson.text);
-        JsonData fishData = JsonMapper.ToObject(reader);
+        HTTPRequest request = new HTTPRequest(new Uri("http://localhost:3000/user/fish"));
 
-        Debug.Log(JsonMapper.ToJson(fishData["fishDatabase"]));
+        string responseString = await request.GetAsStringAsync();
+        JsonData jsonData = JsonMapper.ToObject(responseString);
 
-        fishDatabase.fishList.Clear();
-        foreach (JsonData fish in fishData["fishDatabase"])
+        Debug.Log(jsonData.ToJson());
+
+        if (!jsonData["fishTask"].IsArray)
         {
-            string imagePath = fish["fishImage"].ToString();
-            Sprite image = Resources.Load<Sprite>(imagePath);
+            Debug.Log("No fish task");
+            return;
+        }
 
-            FishInfo newFish = new FishInfo(){
-                fishName = fish["fishName"].ToString(),
-                fishSprite = image,
-                description = fish["description"].ToString(),
-                fishPrice = int.Parse(fish["fishPrice"].ToString()),
-                maxHealth = float.Parse(fish["maxHealth"].ToString()),
-                maxHunger = float.Parse(fish["maxHunger"].ToString()),
-                maxStamina = float.Parse(fish["maxStamina"].ToString()),
-                attack = float.Parse(fish["attack"].ToString()),
-                defense = float.Parse(fish["defense"].ToString()),
-                speed = float.Parse(fish["speed"].ToString())
-            };
-            fishDatabase.fishList.Add(newFish);
+        foreach (JsonData fish in jsonData["fishTask"])
+        {
+            GameObject _fish = (GameObject)Instantiate(fishPrefab, spawnFishPoint.position, Quaternion.identity);
+            _fish.GetComponentInChildren<Fish>().Initialize((float)fish["stats"]["hunger"]);
+
+            if((float)fish["stats"]["hunger"] <= 0){
+                _fish.transform.position = UnityEngine.Random.insideUnitCircle * 5f;
+            }
+
+            Debug.Log(fish["fishName"] + " " + fish["stats"]["hunger"]);
         }
     }
 }

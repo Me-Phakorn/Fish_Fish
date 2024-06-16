@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cabb4bc1d3c435cb06d7ec0e8a3de5, type: 3}
+  m_Name: 2x2
+  m_EditorClassIdentifier: 
+  objectName: 2X2
+  tile: {fileID: 11400000, guid: c592b8cb88c5c44fa8f9b50de15cd507, type: 2}
+  size: {x: 2, y: 2}
+  layerIndex: 0
+  prefab: {fileID: 1956745574329060342, guid: e370646e44118474a91fb7d4ec59a8e0, type: 3}

@@ -12,6 +12,8 @@ public class Fish : MonoBehaviour
 
     public float speed = 2.0f;
 
+    public bool IsDead => isDead;
+
     public IState<Fish> currentState;
 
     private Vector2 movementDirection;
@@ -28,21 +30,25 @@ public class Fish : MonoBehaviour
     private Rigidbody2D rigid2D;
     private Animator animator;
 
+    private CircleCollider2D circleCollider;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        circleCollider = GetComponent<CircleCollider2D>();
     }
 
-    public void Initialize()
+    public void Initialize(float hunger)
     {
-
+        fishStat.Initialize();
+        fishStat.Hungry = hunger;
     }
 
     private void Start()
     {
-        fishStat.Initialize();
         currentSpeed = speed;
 
         RandomIdleTime();
@@ -131,6 +137,7 @@ public class Fish : MonoBehaviour
     {
         rigid2D.gravityScale = .5f;
         spriteRenderer.flipY = true;
+        circleCollider.isTrigger = false;
     }
 
     private void CheckFlipAnimation()

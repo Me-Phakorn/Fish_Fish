@@ -4,9 +4,33 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Food
-  - Fish
-  - Border
+  - Construction
+  - Obstacle
+  - GridLabel
+  - Rubble
+  - Projectile
+  - BuildingCannon
+  - Bullet
+  - Star
+  - Gain
+  - TransData
+  - BuildingStar
+  - BuildingGun
+  - Smoke
+  - Fire
+  - DamageBar
+  - OutofMap
+  - Shadow
+  - Snow
+  - Removable
+  - RemovableTimer
+  - Summon
+  - Target
+  - Grass
+  - Structure
+  - Unit
+  - Dobbit
+  - StoneWall
   layers:
   - Default
   - TransparentFX
@@ -16,12 +40,12 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - 
-  - 
-  - 
-  - 
-  - 
+  - UILayer
+  - Grass
+  - Hide
+  - RayLayer
+  - LightLayer
+  - SFX
   - 
   - 
   - 
@@ -43,13 +67,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1453289883
-    locked: 0
-  - name: Fish
-    uniqueID: 392783497
-    locked: 0
-  - name: Food
-    uniqueID: 1374053755
     locked: 0
